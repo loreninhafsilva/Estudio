@@ -191,17 +191,29 @@
     <EmbeddedResource Include="atuaAluno.resx">
       <DependentUpon>atuaAluno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="atuaModalidade.resx">
+      <DependentUpon>atuaModalidade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cadAluno.resx">
       <DependentUpon>cadAluno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cadLogin.resx">
       <DependentUpon>cadLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cadModalidade.resx">
+      <DependentUpon>cadModalidade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="consAluno.resx">
       <DependentUpon>consAluno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="consModalidade.resx">
+      <DependentUpon>consModalidade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="excAluno.resx">
       <DependentUpon>excAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="excModalidade.resx">
+      <DependentUpon>excModalidade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>

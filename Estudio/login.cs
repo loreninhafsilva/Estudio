@@ -39,37 +39,6 @@ namespace Estudio
             groupBox1.Visible = false;
         }
 
-        private void cadastrarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            cadModalidade form6 = new cadModalidade();
-            form6.MdiParent = this;
-            form6.Show();
-            groupBox1.Visible = false;
-        }
-
-        private void consultarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            consModalidade form7 = new consModalidade();
-            form7.MdiParent = this;
-            form7.Show();
-            groupBox1.Visible = false;
-        }
-
-        private void excluirModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            excModalidade form8 = new excModalidade();
-            form8.MdiParent = this;
-            form8.Show();
-            groupBox1.Visible = false;
-        }
-
-        private void atualizarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            atuaModalidade atualizarModalidade = new atuaModalidade();
-            atualizarModalidade.MdiParent = this;
-            atualizarModalidade.Show();
-            groupBox1.Visible = false;
-        }
 
         private void excluirTurmaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -161,6 +130,38 @@ namespace Estudio
             excAluno form5 = new excAluno();
             form5.MdiParent = this;
             form5.Show();
+            groupBox1.Visible = false;
+        }
+
+        private void cadastrarModalidadeToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            cadModalidade form6 = new cadModalidade();
+            form6.MdiParent = this;
+            form6.Show();
+            groupBox1.Visible = false;
+        }
+
+        private void consultarModalidadeToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            consModalidade form7 = new consModalidade();
+            form7.MdiParent = this;
+            form7.Show();
+            groupBox1.Visible = false;
+        }
+
+        private void atualizarModalidadeToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            atuaModalidade atualizarModalidade = new atuaModalidade();
+            atualizarModalidade.MdiParent = this;
+            atualizarModalidade.Show();
+            groupBox1.Visible = false;
+        }
+
+        private void excluirModalidadeToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            excModalidade form8 = new excModalidade();
+            form8.MdiParent = this;
+            form8.Show();
             groupBox1.Visible = false;
         }
     }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,7 +46,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Estudio_Modalidade (descricaoModalidade, precoModalidade, qtdeAlunos, qtdeAulas) values " + "('" + Descricao1 + "','" + Preco + "'," + qtde_alunos + "," + qtde_aulas + ")", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Modalidade (descricaoModalidade, precoModalidade, qtdeAlunos, qtdeAulas) values " + "('" + Descricao1 + "','" + Preco1 + "'," + qtde_alunos + "," + qtde_aulas + ")", DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 cad = true;
             }
@@ -61,7 +62,7 @@ namespace Estudio
 
         }
 
-        public bool excluirModalidade(string Descricao)
+        public bool excluirModalidade()
         {
             bool exc = false;
             try
@@ -82,6 +83,27 @@ namespace Estudio
             return exc;
         }
 
+        /*public bool encerrarTurma()
+        {
+            bool exc = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand excluir = new MySqlCommand("UPDATE Estudio_Turma SET Estudio_Turma.ativa = 1 FROM Estudio_Turma AS Estudio_Modalidade inner join Estudio_Turma on Estudio_Modalidade.idEstudio_Modalidade = Estudio_Turma.idModalidade and Estudio_Turma.ativa = 0", DAO_Conexao.con);
+                excluir.ExecuteNonQuery();
+                exc = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return exc;
+        }*/
+
         public MySqlDataReader consultarTodasModalidade()
         {
             MySqlDataReader resultado = null;
@@ -89,6 +111,23 @@ namespace Estudio
             {
                 DAO_Conexao.con.Open();
                 MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade where ativa = 0", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
+
+        public MySqlDataReader consultarTodasModalidade02()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
 
             }
@@ -116,6 +155,27 @@ namespace Estudio
             return resultado;
         }
 
+        public int consultaExiste()
+        {
+            int ver = 2;
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade " + "WHERE descricaoModalidade = '" + Descricao + "'", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                {
+                    ver = Convert.ToInt32(resultado["ativa"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return ver;
+        }
+
         public bool atualizarModalidade(string Descricao)
         {
             bool result = false;
@@ -125,6 +185,7 @@ namespace Estudio
                 MySqlCommand comando = new MySqlCommand("update Estudio_Modalidade set descricaoModalidade = '" + Descricao1 + "', precoModalidade = '" + Preco + "', qtdeAlunos = '" + qtde_alunos + "', qtdeAulas = '" + qtde_aulas + "'" + "WHERE descricaoModalidade = '" + Descricao + "'", DAO_Conexao.con);
                 comando.ExecuteNonQuery();
                 result = true;
+
             }
             catch (Exception ex)
             {
