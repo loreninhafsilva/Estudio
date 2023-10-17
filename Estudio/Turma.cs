@@ -200,5 +200,22 @@ namespace Estudio
             }
             return resultado;
         }
+
+        public MySqlDataReader consultarTodasTurma02()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma where ativa = 0 ", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
     }
 }

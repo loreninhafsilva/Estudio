@@ -203,11 +203,17 @@
     <EmbeddedResource Include="cadModalidade.resx">
       <DependentUpon>cadModalidade.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cadTurma.resx">
+      <DependentUpon>cadTurma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="consAluno.resx">
       <DependentUpon>consAluno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="consModalidade.resx">
       <DependentUpon>consModalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="consTurma.resx">
+      <DependentUpon>consTurma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="excAluno.resx">
       <DependentUpon>excAluno.cs</DependentUpon>

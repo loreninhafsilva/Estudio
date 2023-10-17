@@ -185,25 +185,27 @@
             // cadastrarTurmaToolStripMenuItem
             // 
             this.cadastrarTurmaToolStripMenuItem.Name = "cadastrarTurmaToolStripMenuItem";
-            this.cadastrarTurmaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.cadastrarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastrarTurmaToolStripMenuItem.Text = "Cadastrar Turma";
+            this.cadastrarTurmaToolStripMenuItem.Click += new System.EventHandler(this.cadastrarTurmaToolStripMenuItem_Click);
             // 
             // consultarTurmaToolStripMenuItem
             // 
             this.consultarTurmaToolStripMenuItem.Name = "consultarTurmaToolStripMenuItem";
-            this.consultarTurmaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.consultarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarTurmaToolStripMenuItem.Text = "Consultar Turma";
+            this.consultarTurmaToolStripMenuItem.Click += new System.EventHandler(this.consultarTurmaToolStripMenuItem_Click_1);
             // 
             // atualizarTurmaToolStripMenuItem
             // 
             this.atualizarTurmaToolStripMenuItem.Name = "atualizarTurmaToolStripMenuItem";
-            this.atualizarTurmaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.atualizarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.atualizarTurmaToolStripMenuItem.Text = "Atualizar Turma";
             // 
             // excluirTurmaToolStripMenuItem
             // 
             this.excluirTurmaToolStripMenuItem.Name = "excluirTurmaToolStripMenuItem";
-            this.excluirTurmaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.excluirTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.excluirTurmaToolStripMenuItem.Text = "Excluir Turma";
             // 
             // contextMenuStrip1

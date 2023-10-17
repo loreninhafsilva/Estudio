@@ -164,5 +164,21 @@ namespace Estudio
             form8.Show();
             groupBox1.Visible = false;
         }
+
+        private void cadastrarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadTurma form9 = new cadTurma();
+            form9.MdiParent = this;
+            form9.Show();
+            groupBox1.Visible = false;
+        }
+
+        private void consultarTurmaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            consTurma consTurma = new consTurma();
+            consTurma.MdiParent = this;
+            consTurma.Show();
+            groupBox1.Visible = false;
+        }
     }
 }
