@@ -201,6 +201,7 @@
             this.atualizarTurmaToolStripMenuItem.Name = "atualizarTurmaToolStripMenuItem";
             this.atualizarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.atualizarTurmaToolStripMenuItem.Text = "Atualizar Turma";
+            this.atualizarTurmaToolStripMenuItem.Click += new System.EventHandler(this.atualizarTurmaToolStripMenuItem_Click_1);
             // 
             // excluirTurmaToolStripMenuItem
             // 

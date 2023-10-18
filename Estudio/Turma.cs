@@ -80,6 +80,7 @@ namespace Estudio
                 if (resultado.Read())
                 {
                     b = int.Parse(resultado["idEstudio_Modalidade"].ToString());
+                    Console.WriteLine("ConsultarID " + b);
                 }
 
             }
@@ -225,11 +226,95 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma WHERE idModalidade = '" + Modalidade + "' and ativa = 0 and horaTurma = '" + hora + "' and diasemanaTurma = '" + dia_semana +"'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma WHERE idModalidade = " + Modalidade + " and ativa = 0 and horaTurma = '" + hora + "' and diasemanaTurma = '" + dia_semana +"'", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {
                     b = int.Parse(resultado["idEstudio_Turma"].ToString());
+                    Console.WriteLine("ConsultarIDTurma02 " + b);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return b;
+
+        }
+        public MySqlDataReader consultarTurmaModalidade02(int modalidade)
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma where idModalidade ='" + modalidade + "'", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
+
+        public bool atualizaAtiva(int id)
+        {
+            bool atl = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand atualizar = new MySqlCommand("update Estudio_Turma set ativa = 0 where idEstudio_Turma =" + id, DAO_Conexao.con);
+                atualizar.ExecuteNonQuery();
+                atl = true;
+                Console.WriteLine("AtualizaAtiva: " + id);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return atl;
+        }
+
+        public MySqlDataReader consultarTurmaDia02(string dia)
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma where diasemanaTurma ='" + dia + "'", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
+
+        public int consultarID02(string Modalidade)
+        {
+            MySqlDataReader resultado = null;
+            int b = 0;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT idEstudio_Modalidade FROM Estudio_Modalidade " + "WHERE descricaoModalidade = '" + Modalidade + "'", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                {
+                    b = int.Parse(resultado["idEstudio_Modalidade"].ToString());
+                    Console.WriteLine("ConsultarID " + b);
                 }
 
             }

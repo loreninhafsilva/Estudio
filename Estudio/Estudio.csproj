@@ -194,6 +194,9 @@
     <EmbeddedResource Include="atuaModalidade.resx">
       <DependentUpon>atuaModalidade.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="atuaTurma.resx">
+      <DependentUpon>atuaTurma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cadAluno.resx">
       <DependentUpon>cadAluno.cs</DependentUpon>
     </EmbeddedResource>

@@ -47,14 +47,6 @@ namespace Estudio
             groupBox1.Visible = false;
         }
 
-        private void atualizarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            atuaTurma atuaTurma = new atuaTurma();
-            atuaTurma.MdiParent = this;
-            atuaTurma.Show();
-            groupBox1.Visible = false;
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             int ver = DAO_Conexao.verificaLogin(textBox1.Text, textBox2.Text);
@@ -177,6 +169,14 @@ namespace Estudio
             excTurma excTurma = new excTurma();
             excTurma.MdiParent = this;
             excTurma.Show();
+            groupBox1.Visible = false;
+        }
+
+        private void atualizarTurmaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            atuaTurma atuaTurma = new atuaTurma();
+            atuaTurma.MdiParent = this;
+            atuaTurma.Show();
             groupBox1.Visible = false;
         }
     }
