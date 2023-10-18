@@ -221,6 +221,9 @@
     <EmbeddedResource Include="excModalidade.resx">
       <DependentUpon>excModalidade.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="excTurma.resx">
+      <DependentUpon>excTurma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>

@@ -207,6 +207,7 @@
             this.excluirTurmaToolStripMenuItem.Name = "excluirTurmaToolStripMenuItem";
             this.excluirTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.excluirTurmaToolStripMenuItem.Text = "Excluir Turma";
+            this.excluirTurmaToolStripMenuItem.Click += new System.EventHandler(this.excluirTurmaToolStripMenuItem_Click_1);
             // 
             // contextMenuStrip1
             // 

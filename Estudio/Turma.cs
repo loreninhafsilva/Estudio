@@ -190,7 +190,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select Estudio_Modalidade.descricaoModalidade, Estudio_Turma.professorTurma, Estudio_Turma.diasemanaTurma, Estudio_Turma.horaTurma from Estudio_Modalidade inner join Estudio_Turma on Estudio_Modalidade.idEstudio_Modalidade = Estudio_Turma.idModalidade and Estudio_Turma.ativa = 0 and Estudio_Turma.idEstudio_Turma = '" + idTurma + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select Estudio_Turma.nalunosmatriculadosTurma, Estudio_Turma.professorTurma, Estudio_Turma.diasemanaTurma, Estudio_Turma.horaTurma from Estudio_Turma inner join Estudio_Modalidade on Estudio_Modalidade.idEstudio_Modalidade = Estudio_Turma.idModalidade and Estudio_Turma.ativa = 0 and Estudio_Turma.idEstudio_Turma = '" + idTurma + "'", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
 
             }
@@ -216,6 +216,33 @@ namespace Estudio
                 Console.WriteLine(ex.ToString());
             }
             return resultado;
+        }
+
+        public int consultarIDTurma02(int Modalidade, string hora, string dia_semana)
+        {
+            MySqlDataReader resultado = null;
+            int b = 0;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma WHERE idModalidade = '" + Modalidade + "' and ativa = 0 and horaTurma = '" + hora + "' and diasemanaTurma = '" + dia_semana +"'", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                {
+                    b = int.Parse(resultado["idEstudio_Turma"].ToString());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return b;
+
         }
     }
 }

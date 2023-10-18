@@ -39,15 +39,6 @@ namespace Estudio
             groupBox1.Visible = false;
         }
 
-
-        private void excluirTurmaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            excTurma excTurma = new excTurma();
-            excTurma.MdiParent = this;
-            excTurma.Show();
-            groupBox1.Visible = false;
-        }
-
         private void consultarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             consTurma consTurma = new consTurma();
@@ -178,6 +169,14 @@ namespace Estudio
             consTurma consTurma = new consTurma();
             consTurma.MdiParent = this;
             consTurma.Show();
+            groupBox1.Visible = false;
+        }
+
+        private void excluirTurmaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            excTurma excTurma = new excTurma();
+            excTurma.MdiParent = this;
+            excTurma.Show();
             groupBox1.Visible = false;
         }
     }

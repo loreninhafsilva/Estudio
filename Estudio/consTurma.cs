@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Estudio
 {
@@ -26,20 +27,29 @@ namespace Estudio
         private void button1_Click(object sender, EventArgs e)
         {
             Turma turma = new Turma();
-            int modalidade = turma.consultarID(cbModalidade.Text);
+            int m = turma.consultarID(cbModalidade.Text);
 
-            Turma turma2 = new Turma(modalidade);
-            turma2.consultarTodasTurma();
-            DAO_Conexao.con.Close();
+            Turma turma3 = new Turma();
+            int c = turma3.consultarIDTurma02(m, cbHora.Text, cbDia.Text);
 
-            if (turma2.excluirTurma())
+            Turma turma2 = new Turma();
+            MySqlDataReader r = turma2.consultarParaAtualizar(c);
+            if (r.Read())
             {
-                MessageBox.Show("Turma Excluída!");
+                txtProfessor.Text = r["professorTurma"].ToString();
+                txtQtdeAlunos.Text = r["nalunosmatriculadosTurma"].ToString();
+                txtProfessor.Enabled = false;
+                txtQtdeAlunos.Enabled = false;
+
             }
             else
             {
-                MessageBox.Show("Deu erro ruim!");
+                MessageBox.Show("Turma não cadastrada!");
+                txtProfessor.Enabled = true;
+                txtQtdeAlunos.Enabled = true;
             }
+            DAO_Conexao.con.Close();
+
         }
 
         private void cbModalidade_SelectedIndexChanged(object sender, EventArgs e)
