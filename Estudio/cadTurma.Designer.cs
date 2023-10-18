@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtModalidade = new System.Windows.Forms.TextBox();
             this.maskHora = new System.Windows.Forms.MaskedTextBox();
             this.txtQtdeAlunos = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.modalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -60,6 +60,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(432, 240);
@@ -67,85 +68,95 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Casdastrar Turma";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(38, 197);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(354, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Cadastrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // txtModalidade
             // 
-            this.txtModalidade.Location = new System.Drawing.Point(110, 34);
+            this.txtModalidade.Location = new System.Drawing.Point(115, 33);
             this.txtModalidade.Name = "txtModalidade";
-            this.txtModalidade.Size = new System.Drawing.Size(147, 20);
+            this.txtModalidade.Size = new System.Drawing.Size(158, 21);
             this.txtModalidade.TabIndex = 10;
             // 
             // maskHora
             // 
-            this.maskHora.Location = new System.Drawing.Point(78, 156);
+            this.maskHora.Location = new System.Drawing.Point(74, 155);
             this.maskHora.Mask = "00:00";
             this.maskHora.Name = "maskHora";
-            this.maskHora.Size = new System.Drawing.Size(42, 20);
+            this.maskHora.Size = new System.Drawing.Size(42, 21);
             this.maskHora.TabIndex = 8;
             this.maskHora.ValidatingType = typeof(System.DateTime);
             // 
             // txtQtdeAlunos
             // 
-            this.txtQtdeAlunos.Location = new System.Drawing.Point(296, 156);
+            this.txtQtdeAlunos.Location = new System.Drawing.Point(319, 155);
             this.txtQtdeAlunos.Name = "txtQtdeAlunos";
-            this.txtQtdeAlunos.Size = new System.Drawing.Size(100, 20);
+            this.txtQtdeAlunos.Size = new System.Drawing.Size(100, 21);
             this.txtQtdeAlunos.TabIndex = 7;
             // 
             // txtDia
             // 
-            this.txtDia.Location = new System.Drawing.Point(126, 114);
+            this.txtDia.Location = new System.Drawing.Point(142, 113);
             this.txtDia.Name = "txtDia";
-            this.txtDia.Size = new System.Drawing.Size(131, 20);
+            this.txtDia.Size = new System.Drawing.Size(131, 21);
             this.txtDia.TabIndex = 6;
             // 
             // txtProfessor
             // 
-            this.txtProfessor.Location = new System.Drawing.Point(99, 74);
+            this.txtProfessor.Location = new System.Drawing.Point(115, 73);
             this.txtProfessor.Name = "txtProfessor";
-            this.txtProfessor.Size = new System.Drawing.Size(158, 20);
+            this.txtProfessor.Size = new System.Drawing.Size(158, 21);
             this.txtProfessor.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(138, 159);
+            this.label5.Location = new System.Drawing.Point(134, 158);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(152, 13);
+            this.label5.Size = new System.Drawing.Size(179, 15);
             this.label5.TabIndex = 4;
             this.label5.Text = "Quantidade máxima de alunos:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 159);
+            this.label4.Location = new System.Drawing.Point(35, 158);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "Hora:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 117);
+            this.label3.Location = new System.Drawing.Point(35, 116);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 13);
+            this.label3.Size = new System.Drawing.Size(95, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Dia da semana:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 77);
+            this.label2.Location = new System.Drawing.Point(35, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.Size = new System.Drawing.Size(64, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Professor:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 37);
+            this.label1.Location = new System.Drawing.Point(35, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(74, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Modalidade:";
             // 
@@ -158,16 +169,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(432, 164);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(42, 198);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(354, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // modalidade
             // 

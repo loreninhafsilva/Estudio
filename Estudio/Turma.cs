@@ -1,9 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Estudio
 {
@@ -52,7 +48,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Estudio_Turma (professorTurma, idModalidade, diasemanaTurma, horaTurma, nalunosmatriculadosTurma) values " + "('" + Professor + "'," + Modalidade + ",'" + Dia_semana + "','" + hora + "'," + qtde_alunos + ")", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Turma (professorTurma, idModalidade, diasemanaTurma, horaTurma, nalunosmatriculadosTurma) values ('" + Professor + "'," + Modalidade + ",'" + Dia_semana + "','" + hora + "'," + qtde_alunos + ")", DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 cad = true;
             }
@@ -226,14 +222,13 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma WHERE idModalidade = " + Modalidade + " and ativa = 0 and horaTurma = '" + hora + "' and diasemanaTurma = '" + dia_semana +"'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT idEstudio_Turma FROM Estudio_Turma WHERE idModalidade = " + Modalidade + " and horaTurma = '" + hora + "' and diasemanaTurma = '" + dia_semana +"'", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {
                     b = int.Parse(resultado["idEstudio_Turma"].ToString());
                     Console.WriteLine("ConsultarIDTurma02 " + b);
                 }
-
             }
             catch (Exception ex)
             {
@@ -329,5 +324,69 @@ namespace Estudio
             return b;
 
         }
-    }//
+
+        public MySqlDataReader consultarParaAtualizar02(int idTurma)
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select Estudio_Turma.nalunosmatriculadosTurma, Estudio_Turma.professorTurma, Estudio_Turma.diasemanaTurma, Estudio_Turma.horaTurma from Estudio_Turma inner join Estudio_Modalidade on Estudio_Modalidade.idEstudio_Modalidade = Estudio_Turma.idModalidade and Estudio_Turma.idEstudio_Turma = " + idTurma + "", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
+
+        public int consultarAtivo(int id)
+        {
+            MySqlDataReader resultado = null;
+            int b = 0;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT ativa FROM Estudio_Turma WHERE idEstudio_Turma = " + id + "", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                {
+                    b = int.Parse(resultado["ativa"].ToString());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return b;
+        }
+
+        public bool atualizarTurma(int m, int alunos, string professor, string hora, string dia)
+        {
+            bool result = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand comando = new MySqlCommand("update Estudio_Turma set nalunosmatriculadosTurma = " + alunos + ", professorTurma = '" + professor + "', diasemanaTurma = '" + dia + "' WHERE idEstudio_Turma = " + m + "", DAO_Conexao.con);
+                comando.ExecuteNonQuery();
+                result = true;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return result;
+        }
+    }
 }

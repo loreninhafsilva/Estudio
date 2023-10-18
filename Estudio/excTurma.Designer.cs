@@ -48,6 +48,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(58, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(325, 280);
@@ -58,33 +59,33 @@
             // cbDia
             // 
             this.cbDia.FormattingEnabled = true;
-            this.cbDia.Location = new System.Drawing.Point(126, 88);
+            this.cbDia.Location = new System.Drawing.Point(138, 104);
             this.cbDia.Name = "cbDia";
-            this.cbDia.Size = new System.Drawing.Size(142, 21);
+            this.cbDia.Size = new System.Drawing.Size(142, 23);
             this.cbDia.TabIndex = 14;
             this.cbDia.SelectedIndexChanged += new System.EventHandler(this.cbDia_SelectedIndexChanged);
             // 
             // cbHora
             // 
             this.cbHora.FormattingEnabled = true;
-            this.cbHora.Location = new System.Drawing.Point(110, 126);
+            this.cbHora.Location = new System.Drawing.Point(122, 142);
             this.cbHora.Name = "cbHora";
-            this.cbHora.Size = new System.Drawing.Size(158, 21);
+            this.cbHora.Size = new System.Drawing.Size(158, 23);
             this.cbHora.TabIndex = 13;
             // 
             // cbModalidade
             // 
-            this.cbModalidade.Location = new System.Drawing.Point(126, 44);
+            this.cbModalidade.Location = new System.Drawing.Point(138, 60);
             this.cbModalidade.Name = "cbModalidade";
-            this.cbModalidade.Size = new System.Drawing.Size(142, 21);
+            this.cbModalidade.Size = new System.Drawing.Size(142, 23);
             this.cbModalidade.TabIndex = 15;
             this.cbModalidade.SelectedIndexChanged += new System.EventHandler(this.cbModalidade_SelectedIndexChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(42, 180);
+            this.button1.Location = new System.Drawing.Point(44, 194);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(226, 23);
+            this.button1.Size = new System.Drawing.Size(236, 23);
             this.button1.TabIndex = 11;
             this.button1.Text = "Excluir";
             this.button1.UseVisualStyleBackColor = true;
@@ -93,27 +94,27 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 129);
+            this.label4.Location = new System.Drawing.Point(41, 145);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "Hora:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 91);
+            this.label3.Location = new System.Drawing.Point(41, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 13);
+            this.label3.Size = new System.Drawing.Size(95, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Dia da semana:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 47);
+            this.label1.Location = new System.Drawing.Point(41, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(74, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Modalidade:";
             // 

@@ -56,13 +56,13 @@ namespace Estudio
             }
             if (ver == 1)
             {
-                MessageBox.Show("Usuário Administrador");
+                label4.Text = "Usuário administrador!";
                 menuStrip1.Enabled = true;
                 groupBox1.Visible = false;
             }
             if (ver == 2)
             {
-                MessageBox.Show("Usuário Restrito!");
+                label4.Text = "Usuário restrito!";
                 menuStrip1.Enabled = true;
                 groupBox1.Visible = false;
                 cadastrarLoginToolStripMenuItem.Enabled = false;
@@ -179,5 +179,7 @@ namespace Estudio
             atuaTurma.Show();
             groupBox1.Visible = false;
         }
+
+
     }
 }
