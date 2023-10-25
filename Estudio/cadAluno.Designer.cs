@@ -224,7 +224,7 @@
             this.maskCPF.Location = new System.Drawing.Point(68, 38);
             this.maskCPF.Mask = "000.000.000-00";
             this.maskCPF.Name = "maskCPF";
-            this.maskCPF.Size = new System.Drawing.Size(84, 21);
+            this.maskCPF.Size = new System.Drawing.Size(104, 21);
             this.maskCPF.TabIndex = 6;
             this.maskCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskCPF_KeyPress);
             // 

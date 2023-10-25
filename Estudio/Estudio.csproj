@@ -37,7 +37,7 @@
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=8.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\..\..\source\repos\aulasem2\v4.6.2\MySql.Data.dll</HintPath>
+      <HintPath>..\..\source\repos\aulasem2\v4.6.2\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>..\packages\MySqlConnector.2.2.7\lib\net471\MySqlConnector.dll</HintPath>
@@ -96,6 +96,12 @@
     <Compile Include="cadLogin.Designer.cs">
       <DependentUpon>cadLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="cadMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadMatricula.Designer.cs">
+      <DependentUpon>cadMatricula.cs</DependentUpon>
+    </Compile>
     <Compile Include="cadModalidade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,7 @@
     <Compile Include="login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Matricula.cs" />
     <Compile Include="Modalidade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -169,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="cadLogin.resx">
       <DependentUpon>cadLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadMatricula.resx">
+      <DependentUpon>cadMatricula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cadModalidade.resx">
       <DependentUpon>cadModalidade.cs</DependentUpon>

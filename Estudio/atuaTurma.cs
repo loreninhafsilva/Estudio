@@ -88,7 +88,7 @@ namespace Estudio
             if (r.Read())
             {
                 txtProfessor.Text = r["professorTurma"].ToString();
-                txtQtdeAlunos.Text = r["nalunosmatriculadosTurma"].ToString();
+                txtQtdeAlunos.Text = r["nAlunosMaximoTurma"].ToString();
                 txtProfessor.Enabled = true;
                 txtQtdeAlunos.Enabled = true;
                 button2.Enabled = false;

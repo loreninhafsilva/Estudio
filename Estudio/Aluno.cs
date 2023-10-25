@@ -287,6 +287,28 @@ namespace Estudio
             }
             return resultado;
         }
+
+        public string consultarAluno03(string CPF)
+        {
+            MySqlDataReader resultado = null;
+            string b = "";
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT nomeAluno FROM Estudio_Aluno WHERE CPFAluno = '" + CPF + "' and ativo = 0", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                {
+                    b = (resultado["nomeAluno"].ToString());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return b;
+        }
         public int consultarAtivo()
         {
             MySqlDataReader resultado = null;

@@ -8,13 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Estudio
 {
-    public partial class consTurma : Form
+    public partial class cadMatricula : Form
     {
-        public consTurma()
+        public cadMatricula()
         {
             InitializeComponent();
             Modalidade cad = new Modalidade();
@@ -32,24 +31,25 @@ namespace Estudio
             Turma turma3 = new Turma();
             int c = turma3.consultarIDTurma02(m, cbHora.Text, cbDia.Text);
 
-            Turma turma2 = new Turma();
-            MySqlDataReader r = turma2.consultarParaAtualizar(c);
-            if (r.Read())
+            Matricula matricula = new Matricula(maskCPF.Text, c);
+            int alunos = matricula.consultarAlunos();
+            int alunosMaximo = matricula.consultarMaximo();
+            if (alunos == alunosMaximo)
             {
-                txtProfessor.Text = r["professorTurma"].ToString();
-                txtQtdeAlunos.Text = r["nAlunosMaximoTurma"].ToString();
-                txtProfessor.Enabled = false;
-                txtQtdeAlunos.Enabled = false;
-
+                MessageBox.Show("Turma cheia!");
             }
             else
             {
-                MessageBox.Show("Turma não cadastrada!");
-                txtProfessor.Enabled = true;
-                txtQtdeAlunos.Enabled = true;
+                if (matricula.cadastrarMatricula())
+                {
+                    matricula.somarMatricula(alunos);
+                    MessageBox.Show("Matricula realizada com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao matricular!");
+                }
             }
-            DAO_Conexao.con.Close();
-
         }
 
         private void cbModalidade_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,6 +85,29 @@ namespace Estudio
             while (b.Read())
                 cbHora.Items.Add(b["horaTurma"].ToString());
             DAO_Conexao.con.Close();
+        }
+
+        private void maskCPF_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Aluno aluno = new Aluno(maskCPF.Text);
+            if (e.KeyChar == 13)
+            {
+                if (aluno.consultarAluno())
+                {
+                   DAO_Conexao.con.Close();
+                   txtNome.Text = aluno.consultarAluno03(maskCPF.Text);
+                   DAO_Conexao.con.Close();
+                   txtNome.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Aluno não cadastrado!");
+                    DAO_Conexao.con.Close();
+                    cadAluno cadAluno = new cadAluno();
+                    cadAluno.Show();
+                    this.Close();
+                }
+            }
         }
     }
 }

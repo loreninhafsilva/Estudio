@@ -180,6 +180,12 @@ namespace Estudio
             groupBox1.Visible = false;
         }
 
-
+        private void realizarMatrículaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadMatricula cadMatricula = new cadMatricula();
+            cadMatricula.MdiParent = this;
+            cadMatricula.Show();
+            groupBox1.Visible = false;
+        }
     }
 }

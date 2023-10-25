@@ -48,7 +48,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Estudio_Turma (professorTurma, idModalidade, diasemanaTurma, horaTurma, nalunosmatriculadosTurma) values ('" + Professor + "'," + Modalidade + ",'" + Dia_semana + "','" + hora + "'," + qtde_alunos + ")", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Turma (professorTurma, idModalidade, diasemanaTurma, horaTurma, nAlunosMaximoTurma) values ('" + Professor + "'," + Modalidade + ",'" + Dia_semana + "','" + hora + "'," + qtde_alunos + ")", DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 cad = true;
             }
@@ -187,7 +187,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select Estudio_Turma.nalunosmatriculadosTurma, Estudio_Turma.professorTurma, Estudio_Turma.diasemanaTurma, Estudio_Turma.horaTurma from Estudio_Turma inner join Estudio_Modalidade on Estudio_Modalidade.idEstudio_Modalidade = Estudio_Turma.idModalidade and Estudio_Turma.ativa = 0 and Estudio_Turma.idEstudio_Turma = '" + idTurma + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select Estudio_Turma.nAlunosMaximoTurma, Estudio_Turma.professorTurma, Estudio_Turma.diasemanaTurma, Estudio_Turma.horaTurma from Estudio_Turma inner join Estudio_Modalidade on Estudio_Modalidade.idEstudio_Modalidade = Estudio_Turma.idModalidade and Estudio_Turma.ativa = 0 and Estudio_Turma.idEstudio_Turma = '" + idTurma + "'", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
 
             }
@@ -331,7 +331,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select Estudio_Turma.nalunosmatriculadosTurma, Estudio_Turma.professorTurma, Estudio_Turma.diasemanaTurma, Estudio_Turma.horaTurma from Estudio_Turma inner join Estudio_Modalidade on Estudio_Modalidade.idEstudio_Modalidade = Estudio_Turma.idModalidade and Estudio_Turma.idEstudio_Turma = " + idTurma + "", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select Estudio_Turma.nAlunosMaximoTurma, Estudio_Turma.professorTurma, Estudio_Turma.diasemanaTurma, Estudio_Turma.horaTurma from Estudio_Turma inner join Estudio_Modalidade on Estudio_Modalidade.idEstudio_Modalidade = Estudio_Turma.idModalidade and Estudio_Turma.idEstudio_Turma = " + idTurma + "", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)
@@ -373,7 +373,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand comando = new MySqlCommand("update Estudio_Turma set nalunosmatriculadosTurma = " + alunos + ", professorTurma = '" + professor + "', diasemanaTurma = '" + dia + "' WHERE idEstudio_Turma = " + m + "", DAO_Conexao.con);
+                MySqlCommand comando = new MySqlCommand("update Estudio_T urma set nAlunosMaximoTurma = " + alunos + ", professorTurma = '" + professor + "', diasemanaTurma = '" + dia + "' WHERE idEstudio_Turma = " + m + "", DAO_Conexao.con);
                 comando.ExecuteNonQuery();
                 result = true;
 
