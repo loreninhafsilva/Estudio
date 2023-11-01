@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Estudio
 {
-    public partial class cadMatricula : Form
+    public partial class excMatricula : Form
     {
-        public cadMatricula()
+        public excMatricula()
         {
             InitializeComponent();
             Modalidade cad = new Modalidade();
@@ -25,30 +25,7 @@ namespace Estudio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Turma turma = new Turma();
-            int m = turma.consultarID(cbModalidade.Text);
 
-            int c = turma.consultarIDTurma02(m, cbHora.Text, cbDia.Text);
-
-            Matricula matricula = new Matricula(maskCPF.Text, c);
-            int alunos = matricula.consultarAlunos();
-            int alunosMaximo = matricula.consultarMaximo();
-            if (alunosMaximo == alunos)
-            {
-                MessageBox.Show("Turma cheia!");
-            }
-            else
-            {
-                if (matricula.cadastrarMatricula())
-                {
-                    matricula.somarMatricula(alunos);
-                    MessageBox.Show("Matricula realizada com sucesso!");
-                }
-                else
-                {
-                    MessageBox.Show("Erro ao matricular!");
-                }
-            }
         }
 
         private void cbModalidade_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,29 +63,14 @@ namespace Estudio
             DAO_Conexao.con.Close();
         }
 
-        private void maskCPF_KeyPress(object sender, KeyPressEventArgs e)
+        private void cbHora_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Aluno aluno = new Aluno(maskCPF.Text);
-            if (e.KeyChar == 13)
-            {
-                if (aluno.consultarAluno())
-                {
-                   DAO_Conexao.con.Close();
-                   txtNome.Text = aluno.consultarAluno03(maskCPF.Text);
-                   DAO_Conexao.con.Close();
-                   txtNome.Enabled = false;
-                }
-                else
-                {
-                    MessageBox.Show("Aluno não cadastrado!");
-                    DAO_Conexao.con.Close();
-                    cadAluno cadAluno = new cadAluno();
-                    cadAluno.Show();
-                    this.Close();
-                }
-            }
+            Matricula tr = new Matricula();
+            MySqlDataReader b = tr.consultarAlunosnaTurma();
+            while (b.Read())
+                cbAlunos.Items.Add(b["nomeAluno"].ToString());
+            DAO_Conexao.con.Close();
         }
 
-     
     }
 }

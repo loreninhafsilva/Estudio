@@ -139,6 +139,12 @@
     <Compile Include="excAluno.Designer.cs">
       <DependentUpon>excAluno.cs</DependentUpon>
     </Compile>
+    <Compile Include="excMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="excMatricula.Designer.cs">
+      <DependentUpon>excMatricula.cs</DependentUpon>
+    </Compile>
     <Compile Include="excModalidade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="excAluno.resx">
       <DependentUpon>excAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="excMatricula.resx">
+      <DependentUpon>excMatricula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="excModalidade.resx">
       <DependentUpon>excModalidade.cs</DependentUpon>
