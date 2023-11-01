@@ -28,13 +28,12 @@ namespace Estudio
             Turma turma = new Turma();
             int m = turma.consultarID(cbModalidade.Text);
 
-            Turma turma3 = new Turma();
-            int c = turma3.consultarIDTurma02(m, cbHora.Text, cbDia.Text);
+            int c = turma.consultarIDTurma02(m, cbHora.Text, cbDia.Text);
 
             Matricula matricula = new Matricula(maskCPF.Text, c);
             int alunos = matricula.consultarAlunos();
             int alunosMaximo = matricula.consultarMaximo();
-            if (alunos == alunosMaximo)
+            if (alunosMaximo == alunos)
             {
                 MessageBox.Show("Turma cheia!");
             }

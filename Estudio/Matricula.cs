@@ -61,12 +61,12 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select * from Estudio_Turma where = " + idTurma + "", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select * from Estudio_Turma where idEstudio_Turma = " + idTurma + "", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {
                     b = int.Parse(resultado["nalunoscadastradosTurma"].ToString());
-                    Console.WriteLine("ConsultarID " + b);
+                    Console.WriteLine("nalunoscadastradosTurma " + b);
                 }
 
             }
@@ -88,12 +88,12 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select * from Estudio_Turma where = " + idTurma + "", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select nAlunosMaximoTurma from Estudio_Turma where idEstudio_Turma = " + idTurma + "", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {
-                    b = int.Parse(resultado["nAlunosMaximoTurma "].ToString());
-                    Console.WriteLine("ConsultarID " + b);
+                    b = int.Parse(resultado["nAlunosMaximoTurma"].ToString());
+                    Console.WriteLine("nAlunosMaximoTurma" + b);
                 }
 
             }
@@ -117,8 +117,9 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("update Estudio_Matricula set nalunoscadastradosTurma = " + s + " from Estudio_Turma where = " + idTurma + "", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("update Estudio_Turma set nalunoscadastradosTurma = " + s + " where = " + idTurma + "", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
+                Console.WriteLine("nalunoscadastradosTurma" + s);
             }
             catch (Exception ex)
             {
