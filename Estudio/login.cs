@@ -187,5 +187,13 @@ namespace Estudio
             cadMatricula.Show();
             groupBox1.Visible = false;
         }
+
+        private void excluirMatrículaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            excMatricula excMatricula = new excMatricula();
+            excMatricula.MdiParent = this;
+            excMatricula.Show();
+            groupBox1.Visible = false;
+        }
     }
 }

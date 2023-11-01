@@ -49,6 +49,10 @@
             this.atualizarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alunoEmTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matrículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.realizarMatrículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirMatrículaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarMatrículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fazerMatrículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirMatrículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarMatrículasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,10 +65,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.matrículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.realizarMatrículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.excluirMatrículaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarMatrículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -95,53 +95,53 @@
             this.sairToolStripMenuItem1});
             this.alunoToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
-            this.alunoToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.alunoToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.alunoToolStripMenuItem.Text = "Aluno";
             // 
             // cadastrarLoginToolStripMenuItem
             // 
             this.cadastrarLoginToolStripMenuItem.Name = "cadastrarLoginToolStripMenuItem";
-            this.cadastrarLoginToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.cadastrarLoginToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.cadastrarLoginToolStripMenuItem.Text = "Cadastrar Login";
             this.cadastrarLoginToolStripMenuItem.Click += new System.EventHandler(this.cadastrarLoginToolStripMenuItem_Click);
             // 
             // cadastrarAlunoToolStripMenuItem
             // 
             this.cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
-            this.cadastrarAlunoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.cadastrarAlunoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.cadastrarAlunoToolStripMenuItem.Text = "Cadastrar Aluno";
             this.cadastrarAlunoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarAlunoToolStripMenuItem_Click_1);
             // 
             // atualizarAlunoToolStripMenuItem
             // 
             this.atualizarAlunoToolStripMenuItem.Name = "atualizarAlunoToolStripMenuItem";
-            this.atualizarAlunoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.atualizarAlunoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.atualizarAlunoToolStripMenuItem.Text = "Atualizar Aluno";
             this.atualizarAlunoToolStripMenuItem.Click += new System.EventHandler(this.atualizarAlunoToolStripMenuItem_Click_1);
             // 
             // excluirAlunoToolStripMenuItem
             // 
             this.excluirAlunoToolStripMenuItem.Name = "excluirAlunoToolStripMenuItem";
-            this.excluirAlunoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.excluirAlunoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.excluirAlunoToolStripMenuItem.Text = "Excluir Aluno";
             this.excluirAlunoToolStripMenuItem.Click += new System.EventHandler(this.excluirAlunoToolStripMenuItem_Click);
             // 
             // consultarAlunoToolStripMenuItem
             // 
             this.consultarAlunoToolStripMenuItem.Name = "consultarAlunoToolStripMenuItem";
-            this.consultarAlunoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.consultarAlunoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.consultarAlunoToolStripMenuItem.Text = "Consultar Aluno";
             this.consultarAlunoToolStripMenuItem.Click += new System.EventHandler(this.consultarAlunoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(165, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(163, 6);
             // 
             // sairToolStripMenuItem1
             // 
             this.sairToolStripMenuItem1.Name = "sairToolStripMenuItem1";
-            this.sairToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.sairToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
             this.sairToolStripMenuItem1.Text = "Sair";
             this.sairToolStripMenuItem1.Click += new System.EventHandler(this.sairToolStripMenuItem1_Click);
             // 
@@ -200,28 +200,28 @@
             // cadastrarTurmaToolStripMenuItem
             // 
             this.cadastrarTurmaToolStripMenuItem.Name = "cadastrarTurmaToolStripMenuItem";
-            this.cadastrarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarTurmaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.cadastrarTurmaToolStripMenuItem.Text = "Cadastrar Turma";
             this.cadastrarTurmaToolStripMenuItem.Click += new System.EventHandler(this.cadastrarTurmaToolStripMenuItem_Click);
             // 
             // consultarTurmaToolStripMenuItem
             // 
             this.consultarTurmaToolStripMenuItem.Name = "consultarTurmaToolStripMenuItem";
-            this.consultarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarTurmaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.consultarTurmaToolStripMenuItem.Text = "Consultar Turma";
             this.consultarTurmaToolStripMenuItem.Click += new System.EventHandler(this.consultarTurmaToolStripMenuItem_Click_1);
             // 
             // atualizarTurmaToolStripMenuItem
             // 
             this.atualizarTurmaToolStripMenuItem.Name = "atualizarTurmaToolStripMenuItem";
-            this.atualizarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.atualizarTurmaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.atualizarTurmaToolStripMenuItem.Text = "Atualizar Turma";
             this.atualizarTurmaToolStripMenuItem.Click += new System.EventHandler(this.atualizarTurmaToolStripMenuItem_Click_1);
             // 
             // excluirTurmaToolStripMenuItem
             // 
             this.excluirTurmaToolStripMenuItem.Name = "excluirTurmaToolStripMenuItem";
-            this.excluirTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excluirTurmaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.excluirTurmaToolStripMenuItem.Text = "Excluir Turma";
             this.excluirTurmaToolStripMenuItem.Click += new System.EventHandler(this.excluirTurmaToolStripMenuItem_Click_1);
             // 
@@ -229,6 +229,36 @@
             // 
             this.alunoEmTurmaToolStripMenuItem.Name = "alunoEmTurmaToolStripMenuItem";
             this.alunoEmTurmaToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
+            // 
+            // matrículaToolStripMenuItem
+            // 
+            this.matrículaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.realizarMatrículaToolStripMenuItem,
+            this.excluirMatrículaToolStripMenuItem1,
+            this.consultarMatrículaToolStripMenuItem});
+            this.matrículaToolStripMenuItem.Name = "matrículaToolStripMenuItem";
+            this.matrículaToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.matrículaToolStripMenuItem.Text = "Matrícula";
+            // 
+            // realizarMatrículaToolStripMenuItem
+            // 
+            this.realizarMatrículaToolStripMenuItem.Name = "realizarMatrículaToolStripMenuItem";
+            this.realizarMatrículaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.realizarMatrículaToolStripMenuItem.Text = "Realizar Matrícula";
+            this.realizarMatrículaToolStripMenuItem.Click += new System.EventHandler(this.realizarMatrículaToolStripMenuItem_Click);
+            // 
+            // excluirMatrículaToolStripMenuItem1
+            // 
+            this.excluirMatrículaToolStripMenuItem1.Name = "excluirMatrículaToolStripMenuItem1";
+            this.excluirMatrículaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.excluirMatrículaToolStripMenuItem1.Text = "Excluir Matrícula";
+            this.excluirMatrículaToolStripMenuItem1.Click += new System.EventHandler(this.excluirMatrículaToolStripMenuItem1_Click);
+            // 
+            // consultarMatrículaToolStripMenuItem
+            // 
+            this.consultarMatrículaToolStripMenuItem.Name = "consultarMatrículaToolStripMenuItem";
+            this.consultarMatrículaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarMatrículaToolStripMenuItem.Text = "Consultar Matrícula";
             // 
             // fazerMatrículaToolStripMenuItem
             // 
@@ -336,35 +366,6 @@
             this.label4.Size = new System.Drawing.Size(75, 15);
             this.label4.TabIndex = 6;
             this.label4.Text = "-----------------";
-            // 
-            // matrículaToolStripMenuItem
-            // 
-            this.matrículaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.realizarMatrículaToolStripMenuItem,
-            this.excluirMatrículaToolStripMenuItem1,
-            this.consultarMatrículaToolStripMenuItem});
-            this.matrículaToolStripMenuItem.Name = "matrículaToolStripMenuItem";
-            this.matrículaToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.matrículaToolStripMenuItem.Text = "Matrícula";
-            // 
-            // realizarMatrículaToolStripMenuItem
-            // 
-            this.realizarMatrículaToolStripMenuItem.Name = "realizarMatrículaToolStripMenuItem";
-            this.realizarMatrículaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.realizarMatrículaToolStripMenuItem.Text = "Realizar Matrícula";
-            this.realizarMatrículaToolStripMenuItem.Click += new System.EventHandler(this.realizarMatrículaToolStripMenuItem_Click);
-            // 
-            // excluirMatrículaToolStripMenuItem1
-            // 
-            this.excluirMatrículaToolStripMenuItem1.Name = "excluirMatrículaToolStripMenuItem1";
-            this.excluirMatrículaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.excluirMatrículaToolStripMenuItem1.Text = "Excluir Matrícula";
-            // 
-            // consultarMatrículaToolStripMenuItem
-            // 
-            this.consultarMatrículaToolStripMenuItem.Name = "consultarMatrículaToolStripMenuItem";
-            this.consultarMatrículaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.consultarMatrículaToolStripMenuItem.Text = "Consultar Matrícula";
             // 
             // login
             // 

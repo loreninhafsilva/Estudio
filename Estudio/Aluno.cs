@@ -217,7 +217,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno " + "WHERE CPFAluno='" + CPF + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno WHERE CPFAluno= '" + CPF + "' and ativo = 0", DAO_Conexao.con);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {
@@ -296,7 +296,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno " + "WHERE CPFAluno = '" + CPF + "' and ativo = 0", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno WHERE CPFAluno = '" + CPF + "' and ativo = 0", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
 
             }

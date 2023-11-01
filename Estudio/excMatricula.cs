@@ -23,11 +23,6 @@ namespace Estudio
             DAO_Conexao.con.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cbModalidade_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbHora.Items.Clear();
@@ -65,12 +60,40 @@ namespace Estudio
 
         private void cbHora_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Turma turma = new Turma();
+            int m = turma.consultarID(cbModalidade.Text);
+
+            int c = turma.consultarIDTurma02(m, cbHora.Text, cbDia.Text);
+
             Matricula tr = new Matricula();
-            MySqlDataReader b = tr.consultarAlunosnaTurma();
+            MySqlDataReader b = tr.consultarAlunosnaTurma(c);
             while (b.Read())
                 cbAlunos.Items.Add(b["nomeAluno"].ToString());
             DAO_Conexao.con.Close();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Turma turma = new Turma();
+            int m = turma.consultarID(cbModalidade.Text);
+
+            int c = turma.consultarIDTurma02(m, cbHora.Text, cbDia.Text);
+
+            Matricula matricula = new Matricula();
+            string b = matricula.consultarCPF(cbAlunos.Text);
+
+                if (matricula.excluirMatricula(b, c))
+                {
+                     int alunos = matricula.consultarAlunos();
+                     matricula.diminuirMatricula(alunos,c);
+                     MessageBox.Show("Exclusão realizada com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao excluir!");
+                }
+        }
+        
     }
+    
 }
