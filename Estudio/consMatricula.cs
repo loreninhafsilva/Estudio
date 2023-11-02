@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Estudio
 {
-    public partial class excMatricula : Form
+    public partial class consMatricula : Form
     {
-        public excMatricula()
+        public consMatricula()
         {
             InitializeComponent();
             Modalidade cad = new Modalidade();
@@ -25,8 +26,11 @@ namespace Estudio
 
         private void cbModalidade_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
             cbHora.Items.Clear();
             cbDia.Items.Clear();
+            cbDia.Text = " ";
+            cbHora.Text = " ";
             Turma turma = new Turma();
             int modalidade = turma.consultarID(cbModalidade.Text);
 
@@ -41,6 +45,8 @@ namespace Estudio
                 cbDia.Enabled = false;
                 cbHora.Enabled = false;
                 MessageBox.Show("Turma inexistente. Selecione uma modalidade com turma.");
+                cbHora.Items.Clear();
+                cbDia.Items.Clear();
             }
             else
             {
@@ -58,20 +64,6 @@ namespace Estudio
             DAO_Conexao.con.Close();
         }
 
-        private void cbHora_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Turma turma = new Turma();
-            int m = turma.consultarID(cbModalidade.Text);
-
-            int c = turma.consultarIDTurma02(m, cbHora.Text, cbDia.Text);
-
-            Matricula tr = new Matricula();
-            MySqlDataReader b = tr.consultarAlunosnaTurma(c);
-            while (b.Read())
-                cbAlunos.Items.Add(b["nomeAluno"].ToString());
-            DAO_Conexao.con.Close();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Turma turma = new Turma();
@@ -79,21 +71,12 @@ namespace Estudio
 
             int c = turma.consultarIDTurma02(m, cbHora.Text, cbDia.Text);
 
-            Matricula matricula = new Matricula();
-            string b = matricula.consultarCPF(cbAlunos.Text);
-
-                if (matricula.excluirMatricula(b, c))
-                {
-                     int alunos = matricula.consultarAlunos();
-                     matricula.diminuirMatricula(alunos,c);
-                     MessageBox.Show("Exclusão realizada com sucesso!");
-                }
-                else
-                {
-                    MessageBox.Show("Erro ao excluir!");
-                }
+            Matricula con_mod = new Matricula();
+            MySqlDataReader r = con_mod.consultarAlunos(c);
+            while (r.Read())
+                dataGridView1.Rows.Add(r["CPFAluno"].ToString(), r["nomeAluno"].ToString());
+            DAO_Conexao.con.Close();
         }
 
     }
-    
 }

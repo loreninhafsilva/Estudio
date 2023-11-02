@@ -224,5 +224,23 @@ namespace Estudio
             }
             return b;
         }
+
+       public MySqlDataReader consultarAlunos(int idTurma)
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select Estudio_Aluno.CPFAluno, Estudio_Aluno.nomeAluno from Estudio_Aluno inner join Estudio_Matricula on Estudio_Matricula.CPFAluno = Estudio_Aluno.CPFAluno and Estudio_Matricula.idTurma = " + idTurma + " and Estudio_Aluno.ativo = 0", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
+
     }
 }

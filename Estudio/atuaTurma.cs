@@ -24,6 +24,10 @@ namespace Estudio
         }
         private void cbModalidade_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cbDia.Text = " ";
+            cbHora.Text = " ";
+            txtProfessor.Text = " ";
+            txtQtdeAlunos.Text = " ";
             cbHora.Items.Clear();
             cbDia.Items.Clear();
             Turma turma = new Turma();
@@ -39,6 +43,8 @@ namespace Estudio
             {
                 cbDia.Enabled = false;
                 cbHora.Enabled = false;
+                txtProfessor.Enabled = false;
+                txtQtdeAlunos.Enabled = false;
                 MessageBox.Show("Turma inexistente. Selecione uma modalidade com turma.");
             }
             else
@@ -71,6 +77,7 @@ namespace Estudio
                 button2.Enabled = false;
                 txtProfessor.Enabled = true;
                 txtQtdeAlunos.Enabled = true;
+                button1.Enabled = true;
             }
             else
             {
@@ -92,10 +99,12 @@ namespace Estudio
                 txtProfessor.Enabled = true;
                 txtQtdeAlunos.Enabled = true;
                 button2.Enabled = false;
+                button1.Enabled = true;
             }
             else
             {
                 MessageBox.Show("Turma inativa!");
+                button1.Enabled = true;
                 txtProfessor.Enabled = true;
                 txtQtdeAlunos.Enabled = true;
             }
@@ -103,6 +112,7 @@ namespace Estudio
             if (turma.consultarAtivo(c) == 1)
             {
                 button2.Enabled = true;
+                button1.Enabled = false;
                 txtProfessor.Enabled = false;
                 txtQtdeAlunos.Enabled = false;
             }

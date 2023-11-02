@@ -195,5 +195,13 @@ namespace Estudio
             excMatricula.Show();
             groupBox1.Visible = false;
         }
+
+        private void consultarMatrículaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            consMatricula consMatricula = new consMatricula();
+            consMatricula.MdiParent = this;
+            consMatricula.Show();
+            groupBox1.Visible = false;
+        }
     }
 }

@@ -25,6 +25,9 @@ namespace Estudio
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            maskConsultaPreco.Clear();
+            txtAlunos.Text = " ";
+            txtAulas.Text = " ";
             Modalidade modalidade = new Modalidade(comboBox1.Text);
             MySqlDataReader r = modalidade.consultarModalidade();
 
@@ -43,11 +46,19 @@ namespace Estudio
             Console.WriteLine(b);
             if (b == 1)
             {
+                button1.Enabled = false;
                 btnAtivo.Enabled = true;
+                maskConsultaPreco.Enabled = false;
+                txtAlunos.Enabled = false;
+                txtAulas.Enabled = false;
             }
             else
             {
+                button1.Enabled = true;
                 btnAtivo.Enabled = false;
+                maskConsultaPreco.Enabled = true;
+                txtAlunos.Enabled = true;
+                txtAulas.Enabled = true;
             }
         }
 
@@ -62,6 +73,10 @@ namespace Estudio
                 if (modalidade.atualizaAtiva(comboBox1.Text))
                 {
                     MessageBox.Show("Modalidade ativa com Sucesso");
+                    button1.Enabled = true;
+                    maskConsultaPreco.Enabled = true;
+                    txtAlunos.Enabled = true;
+                    txtAulas.Enabled = true;
                 }
                 else
                 {
@@ -98,6 +113,11 @@ namespace Estudio
             {
                 MessageBox.Show("Modalidade não encontrada");
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
