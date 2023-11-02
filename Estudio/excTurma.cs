@@ -72,7 +72,8 @@ namespace Estudio
         private void cbDia_SelectedIndexChanged(object sender, EventArgs e)
         {
             Turma tr = new Turma();
-            MySqlDataReader b = tr.consultarTurmaDia(cbDia.Text);
+            int modalidade = tr.consultarID(cbModalidade.Text);
+            MySqlDataReader b = tr.consultarTurmaDia(cbDia.Text, modalidade);
             while (b.Read())
                 cbHora.Items.Add(b["horaTurma"].ToString());
             DAO_Conexao.con.Close();

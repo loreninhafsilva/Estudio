@@ -25,9 +25,16 @@ namespace Estudio
                 else if (comboBox1.SelectedIndex == 1)
                     tipo = 2; //restrito
                 if (DAO_Conexao.CadLogin(textBox1.Text, textBox2.Text, tipo))
-                    MessageBox.Show("Cadastro realizado com sucesso!");
+                    {
+                        MessageBox.Show("Cadastro realizado com sucesso!");
+                        textBox1.Clear();
+                        textBox2.Clear();
+                        comboBox1.Text = " ";
+                    }
+                    
                 else
                     MessageBox.Show("Usuário existente");
+
         }
     }
 }

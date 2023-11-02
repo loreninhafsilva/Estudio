@@ -28,17 +28,17 @@ namespace Estudio
                 if (aluno.atualizarAluno())
                 {
                     MessageBox.Show("Dados atualizados com Sucesso");
-                    txtBairro.Text = " ";
-                    maskCEP.Text = " ";
-                    txtCidade.Text = "  ";
-                    txtCompl.Text = " ";
-                    maskCPF.Text = " ";
-                    txtEmail.Text = " ";
-                    txtEnd.Text = " ";
-                    txtEstado.Text = " ";
-                    txtNome.Text = " ";
-                    txtNumero.Text = " ";
-                    maskTel.Text = " ";
+                    txtBairro.Text = "";
+                    maskCEP.Text = "";
+                    txtCidade.Text = "";
+                    txtCompl.Text = "";
+                    maskCPF.Text = "";
+                    txtEmail.Text = "";
+                    txtEnd.Text = "";
+                    txtEstado.Text = "";
+                    txtNome.Text = "";
+                    txtNumero.Text ="";
+                    maskTel.Text = "";
                 }
                 else
                 {
@@ -62,10 +62,34 @@ namespace Estudio
                 if (b == 1)
                 {
                     btnAtivo.Enabled = true;
+                    button1.Enabled = false;
+                    txtBairro.Enabled = false;
+                    maskCEP.Enabled = false;
+                    txtCidade.Enabled = false;
+                    txtCompl.Enabled = false;
+                    maskCPF.Enabled = false;
+                    txtEmail.Enabled = false;
+                    txtEnd.Enabled = false;
+                    txtEstado.Enabled = false;
+                    txtNome.Enabled = false;
+                    txtNumero.Enabled = false;
+                    maskTel.Enabled = false;
                 }
                 else
                 {
+                    button1.Enabled = true;
                     btnAtivo.Enabled = false;
+                    txtBairro.Enabled = true;
+                    maskCEP.Enabled = true;
+                    txtCidade.Enabled = true;
+                    txtCompl.Enabled = true;
+                    maskCPF.Enabled = true;
+                    txtEmail.Enabled = true;
+                    txtEnd.Enabled = true;
+                    txtEstado.Enabled = true;
+                    txtNome.Enabled = true;
+                    txtNumero.Enabled = true;
+                    maskTel.Enabled = true;
                 }
                 DAO_Conexao.con.Close();
 
@@ -86,6 +110,17 @@ namespace Estudio
                 else
                 {
                     MessageBox.Show("Aluno não cadastrado!");
+                    txtBairro.Text = "";
+                    maskCEP.Text = "";
+                    txtCidade.Text = "";
+                    txtCompl.Text = "";
+                    maskCPF.Text = "";
+                    txtEmail.Text = "";
+                    txtEnd.Text = "";
+                    txtEstado.Text = "";
+                    txtNome.Text = "";
+                    txtNumero.Text = "";
+                    maskTel.Text = "";
                 }
 
 
@@ -103,6 +138,19 @@ namespace Estudio
                 if (aluno.atualizaAtivo())
                 {
                     MessageBox.Show("Aluno ativo com Sucesso");
+                    button1.Enabled = true;
+                    btnAtivo.Enabled = false;
+                    txtBairro.Enabled = true;
+                    maskCEP.Enabled = true;
+                    txtCidade.Enabled = true;
+                    txtCompl.Enabled = true;
+                    maskCPF.Enabled = true;
+                    txtEmail.Enabled = true;
+                    txtEnd.Enabled = true;
+                    txtEstado.Enabled = true;
+                    txtNome.Enabled = true;
+                    txtNumero.Enabled = true;
+                    maskTel.Enabled = true;
                 }
                 else
                 {
@@ -111,5 +159,7 @@ namespace Estudio
             }
       
         }
+
+
     }
 }

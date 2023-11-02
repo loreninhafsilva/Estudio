@@ -28,7 +28,22 @@ namespace Estudio
             Aluno aluno = new Aluno(maskCPF.Text, txtNome.Text, txtEnd.Text, txtNumero.Text, txtBairro.Text, txtCompl.Text, maskCEP.Text, txtCidade.Text, txtEstado.Text, maskTel.Text, txtEmail.Text, foto);
 
             if (aluno.cadastrarAluno())
+            {
                 MessageBox.Show("Cadastro realizado com sucesso!");
+                maskCPF.Clear();
+                txtNome.Text = "" ;
+                txtEnd.Text = "";
+                txtNumero.Text = "";
+                txtBairro.Text = "";
+                txtCompl.Text = "";
+                maskCEP.Text = "";
+                txtCidade.Text = "";
+                txtEstado.Text = "";
+                maskTel.Text = "";
+                txtEmail.Text = "";
+                pictureBox1.Image = null;
+            }
+                
             else
                 MessageBox.Show("Erro no cadastro!");
         }
@@ -36,42 +51,50 @@ namespace Estudio
         private void maskCPF_KeyPress(object sender, KeyPressEventArgs e)
         {
             Aluno aluno = new Aluno(maskCPF.Text);
-            if (e.KeyChar == 13)
-            {
-                if (aluno.consultarAluno())
-                {
-                    MessageBox.Show("Aluno já cadastrado!");
-                    txtNome.Enabled = false;
-                    txtEnd.Enabled = false;
-                    txtNumero.Enabled = false;
-                    txtBairro.Enabled = false;
-                    txtCompl.Enabled = false;
-                    maskCEP.Enabled = false;
-                    txtCidade.Enabled = false;
-                    txtEstado.Enabled = false;
-                    maskTel.Enabled = false;
-                    txtEmail.Enabled = false;
+            //if (aluno.verificaCPF() == true)
+            //{
+                if (e.KeyChar == 13)
+                  {
+                    if (aluno.consultarAluno())
+                    {
+                        MessageBox.Show("Aluno já cadastrado!");
+                        txtNome.Enabled = false;
+                        txtEnd.Enabled = false;
+                        txtNumero.Enabled = false;
+                        txtBairro.Enabled = false;
+                        txtCompl.Enabled = false;
+                        maskCEP.Enabled = false;
+                        txtCidade.Enabled = false;
+                        txtEstado.Enabled = false;
+                        maskTel.Enabled = false;
+                        txtEmail.Enabled = false;
 
-                }
+                    }
+                    else
+                    {
+                        txtNome.Focus();
+                        txtNome.Enabled = true;
+                        txtEnd.Enabled = true;
+                        txtNumero.Enabled = true;
+                        txtBairro.Enabled = true;
+                        txtCompl.Enabled = true;
+                        maskCEP.Enabled = true;
+                        txtCidade.Enabled = true;
+                        txtEstado.Enabled = true;
+                        maskTel.Enabled = true;
+                        txtEmail.Enabled = true;
+                    }
+                  }
                 else
                 {
                     txtNome.Focus();
-                    txtNome.Enabled = true;
-                    txtEnd.Enabled = true;
-                    txtNumero.Enabled = true;
-                    txtBairro.Enabled = true;
-                    txtCompl.Enabled = true;
-                    maskCEP.Enabled = true;
-                    txtCidade.Enabled = true;
-                    txtEstado.Enabled = true;
-                    maskTel.Enabled = true;
-                    txtEmail.Enabled = true;
                 }
-            }
-            else
+          // }
+            /*else
             {
-                txtNome.Focus();
-            }
+                MessageBox.Show("CPF inválido!");
+                maskCPF.Clear();
+            }*/
             DAO_Conexao.con.Close(); //somente fecha depois de retornar
         }
 

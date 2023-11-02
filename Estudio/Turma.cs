@@ -126,13 +126,13 @@ namespace Estudio
             return resultado;
         }
 
-        public MySqlDataReader consultarTurmaDia(string dia)
+        public MySqlDataReader consultarTurmaDia(string dia, int idModalidade)
         {
             MySqlDataReader resultado = null;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma where diasemanaTurma ='" + dia + "' and ativa = 0 ", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma where diasemanaTurma ='" + dia + "' and ativa = 0 and idModalidade = '"+ idModalidade + "'", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
 
             }

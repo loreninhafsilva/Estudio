@@ -26,6 +26,7 @@ namespace Estudio
                     if (aluno.excluirAluno())
                     {
                         MessageBox.Show("Aluno Excluído!");
+                        maskedTextBox1.Clear();
                     }
                     else
                     {
