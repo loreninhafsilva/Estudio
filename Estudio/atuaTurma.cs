@@ -73,7 +73,7 @@ namespace Estudio
 
             if (turma.atualizaAtiva(c))
             {
-                MessageBox.Show("Modalidade ativa com Sucesso");
+                MessageBox.Show("Turma ativa com Sucesso");
                 button2.Enabled = false;
                 txtProfessor.Enabled = true;
                 txtQtdeAlunos.Enabled = true;
@@ -101,16 +101,10 @@ namespace Estudio
                 button2.Enabled = false;
                 button1.Enabled = true;
             }
-            else
-            {
-                MessageBox.Show("Turma inativa!");
-                button1.Enabled = true;
-                txtProfessor.Enabled = true;
-                txtQtdeAlunos.Enabled = true;
-            }
             DAO_Conexao.con.Close();
             if (turma.consultarAtivo(c) == 1)
             {
+                MessageBox.Show("Turma inativa!");
                 button2.Enabled = true;
                 button1.Enabled = false;
                 txtProfessor.Enabled = false;

@@ -46,9 +46,10 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Estudio_Modalidade (descricaoModalidade, precoModalidade, qtdeAlunos, qtdeAulas) values " + "('" + Descricao1 + "','" + Preco1 + "'," + qtde_alunos + "," + qtde_aulas + ")", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Modalidade (descricaoModalidade, precoModalidade, qtdeAlunos, qtdeAulas) values ('" + Descricao1 + "','" + Preco1 + "'," + qtde_alunos + "," + qtde_aulas + ")", DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 cad = true;
+                Console.WriteLine("Modalidade adicionada");
             }
             catch (Exception ex)
             {
@@ -68,7 +69,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand excluir = new MySqlCommand("update Estudio_Modalidade set ativa " + "= 1 where descricaoModalidade ='" + Descricao + "'", DAO_Conexao.con);
+                MySqlCommand excluir = new MySqlCommand("update Estudio_Modalidade set ativa = 1 where descricaoModalidade ='" + Descricao + "'", DAO_Conexao.con);
                 excluir.ExecuteNonQuery();
                 exc = true;
             }
@@ -82,27 +83,6 @@ namespace Estudio
             }
             return exc;
         }
-
-        /*public bool encerrarTurma()
-        {
-            bool exc = false;
-            try
-            {
-                DAO_Conexao.con.Open();
-                MySqlCommand excluir = new MySqlCommand("UPDATE Estudio_Turma SET Estudio_Turma.ativa = 1 FROM Estudio_Turma AS Estudio_Modalidade inner join Estudio_Turma on Estudio_Modalidade.idEstudio_Modalidade = Estudio_Turma.idModalidade and Estudio_Turma.ativa = 0", DAO_Conexao.con);
-                excluir.ExecuteNonQuery();
-                exc = true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                DAO_Conexao.con.Close();
-            }
-            return exc;
-        }*/
 
         public MySqlDataReader consultarTodasModalidade()
         {
@@ -162,7 +142,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade " + "WHERE descricaoModalidade = '" + Descricao + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade WHERE descricaoModalidade = '" + Descricao + "'", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {

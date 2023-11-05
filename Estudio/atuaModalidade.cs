@@ -72,11 +72,18 @@ namespace Estudio
 
                 if (modalidade.atualizaAtiva(comboBox1.Text))
                 {
-                    MessageBox.Show("Modalidade ativa com Sucesso");
-                    button1.Enabled = true;
-                    maskConsultaPreco.Enabled = true;
-                    txtAlunos.Enabled = true;
-                    txtAulas.Enabled = true;
+                    Turma turma = new Turma();
+                    int c = turma.consultarID02(comboBox1.Text);
+                    if (turma.atualizaAtiva02(c))
+                    {
+                        MessageBox.Show("Modalidade ativa com Sucesso");
+                        button1.Enabled = true;
+                        maskConsultaPreco.Enabled = true;
+                        txtAlunos.Enabled = true;
+                        txtAulas.Enabled = true;
+                        btnAtivo.Enabled = false;
+                    }
+                
                 }
                 else
                 {
@@ -103,6 +110,10 @@ namespace Estudio
                 if (modalidade.atualizarModalidade(comboBox1.Text))
                 {
                     MessageBox.Show("Dados atualizados com Sucesso");
+                    maskConsultaPreco.Clear();
+                    txtAlunos.Clear();
+                    txtAulas.Clear();
+                    comboBox1.Text = "";
                 }
                 else
                 {

@@ -25,20 +25,27 @@ namespace Estudio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Modalidade modalidade = new Modalidade(comboBox1.Text);
-            modalidade.consultarTodasModalidade();
+            Turma turma = new Turma();
+            int modalidade = turma.consultarID(comboBox1.Text);
+            Turma turma2 = new Turma(modalidade);
+            turma2.consultarTodasTurma();
             DAO_Conexao.con.Close();
-            if (modalidade.excluirModalidade())
+
+            Modalidade modalidade2 = new Modalidade(comboBox1.Text);
+            modalidade2.consultarTodasModalidade();
+            DAO_Conexao.con.Close();
+
+            if (modalidade2.excluirModalidade())
             {
-                /*if(modalidade.encerrarTurma())*/
-                //{
-                    MessageBox.Show("Modalidade Excluída!");
-                //} 
-            }
-               else
+                if(turma2.excluirTurma())
                 {
-                    MessageBox.Show("Deu erro ruim!");
+                    MessageBox.Show("Modalidade Excluída!");
                 } 
+            }
+            else
+            {
+                MessageBox.Show("Deu erro ruim!");
+            } 
         }
     }
 }

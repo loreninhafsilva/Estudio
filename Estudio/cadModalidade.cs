@@ -26,16 +26,25 @@ namespace Estudio
             Modalidade modalidade = new Modalidade(txtModalidade.Text, preco, alunos, aulas);
             if (modalidade.consultaExiste() == 2)
             {
+                DAO_Conexao.con.Close();
                 if (modalidade.cadastrarModalidade())
-                MessageBox.Show("Cadastro realizado com sucesso!");
+                {
+                    MessageBox.Show("Cadastro realizado com sucesso!");
+                }
                 else
-                MessageBox.Show("Erro no cadastro!");
+                {
+                    MessageBox.Show("Erro no cadastro!");
+                }
             }
             else
             {
                 MessageBox.Show("Modalidade existente!");
             }
-                
+            maskedPreco.Clear();
+            txtAlunos.Clear();
+            txtAulas.Clear();
+            txtModalidade.Clear();
+
         }
     }
 }

@@ -71,7 +71,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT idEstudio_Modalidade FROM Estudio_Modalidade " + "WHERE descricaoModalidade = '" + Modalidade + "' and ativa = 0", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT idEstudio_Modalidade FROM Estudio_Modalidade WHERE descricaoModalidade = '" + Modalidade + "' and ativa = 0", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {
@@ -149,7 +149,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand excluir = new MySqlCommand("update Estudio_Turma set ativa " + "= 1 where idModalidade ='" + Modalidade + "'", DAO_Conexao.con);
+                MySqlCommand excluir = new MySqlCommand("update Estudio_Turma set ativa = 1 where idModalidade ='" + Modalidade + "'", DAO_Conexao.con);
                 excluir.ExecuteNonQuery();
                 exc = true;
             }
@@ -280,6 +280,28 @@ namespace Estudio
             return atl;
         }
 
+        public bool atualizaAtiva02(int id)
+        {
+            bool atl = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand atualizar = new MySqlCommand("update Estudio_Turma set ativa = 0 where idModalidade =" + id, DAO_Conexao.con);
+                atualizar.ExecuteNonQuery();
+                atl = true;
+                Console.WriteLine("AtualizaAtiva: " + id);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return atl;
+        }
+
         public MySqlDataReader consultarTurmaDia02(string dia)
         {
             MySqlDataReader resultado = null;
@@ -304,7 +326,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT idEstudio_Modalidade FROM Estudio_Modalidade " + "WHERE descricaoModalidade = '" + Modalidade + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT idEstudio_Modalidade FROM Estudio_Modalidade WHERE descricaoModalidade = '" + Modalidade + "'", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {
@@ -373,7 +395,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand comando = new MySqlCommand("update Estudio_T urma set nAlunosMaximoTurma = " + alunos + ", professorTurma = '" + professor + "', diasemanaTurma = '" + dia + "' WHERE idEstudio_Turma = " + m + "", DAO_Conexao.con);
+                MySqlCommand comando = new MySqlCommand("update Estudio_Turma set nAlunosMaximoTurma = " + alunos + ", professorTurma = '" + professor + "', diasemanaTurma = '" + dia + "' WHERE idEstudio_Turma = " + m + "", DAO_Conexao.con);
                 comando.ExecuteNonQuery();
                 result = true;
 

@@ -54,6 +54,10 @@ namespace Estudio
 
         private void cbModalidade_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cbDia.Text = " ";
+            cbHora.Text = " ";
+            txtProfessor.Text = " ";
+            txtQtdeAlunos.Text = " ";
             cbHora.Items.Clear();
             cbDia.Items.Clear();
             Turma turma = new Turma();

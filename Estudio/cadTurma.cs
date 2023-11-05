@@ -37,11 +37,11 @@ namespace Estudio
             if (modalidade == 0)
             {
                 MessageBox.Show("Selecione uma modalidade ativa.");
-                txtModalidade.Text = " ";
-                txtDia.Text = " ";
-                txtProfessor.Text = " ";
-                txtQtdeAlunos.Text = " ";
-                maskHora.Text = " ";
+                txtModalidade.Clear();
+                txtDia.Text = "";
+                txtProfessor.Text = "";
+                txtQtdeAlunos.Text = "";
+                maskHora.Text = "";
             }
             else
             {
@@ -52,10 +52,11 @@ namespace Estudio
                 if (turma2.cadastrarTurma())
                 {
                     MessageBox.Show("Cadastro realizado com sucesso!");
-                    txtDia.Text = " ";
-                    txtProfessor.Text = " ";
-                    txtQtdeAlunos.Text = " ";
-                    maskHora.Text = " ";
+                    txtDia.Text = "";
+                    txtProfessor.Text = "";
+                    txtQtdeAlunos.Text = "";
+                    maskHora.Text = "";
+                    txtModalidade.Text = "";
                 }
                    
                 else

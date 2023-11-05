@@ -51,8 +51,8 @@ namespace Estudio
         private void maskCPF_KeyPress(object sender, KeyPressEventArgs e)
         {
             Aluno aluno = new Aluno(maskCPF.Text);
-            //if (aluno.verificaCPF() == true)
-            //{
+            if (aluno.verificaCPF() == true)
+            {
                 if (e.KeyChar == 13)
                   {
                     if (aluno.consultarAluno())
@@ -89,12 +89,12 @@ namespace Estudio
                 {
                     txtNome.Focus();
                 }
-          // }
-            /*else
+          }
+            else
             {
                 MessageBox.Show("CPF inválido!");
                 maskCPF.Clear();
-            }*/
+            }
             DAO_Conexao.con.Close(); //somente fecha depois de retornar
         }
 

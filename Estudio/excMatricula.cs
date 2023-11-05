@@ -88,7 +88,15 @@ namespace Estudio
                      int alunos = matricula.consultarAlunos();
                      matricula.diminuirMatricula(alunos,c);
                      MessageBox.Show("Exclusão realizada com sucesso!");
-                }
+                cbHora.Items.Clear();
+                cbDia.Items.Clear();
+                cbAlunos.Items.Clear();
+                cbDia.Text = "";
+                cbHora.Text = "";
+                cbAlunos.Text = "";
+                cbModalidade.Text = "";
+
+            }
                 else
                 {
                     MessageBox.Show("Erro ao excluir!");

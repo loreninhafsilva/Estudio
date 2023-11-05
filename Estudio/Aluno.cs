@@ -372,13 +372,13 @@ namespace Estudio
             return atl;
         }
 
-        /*public bool verificaCPF() //string CPF - sem parâmetro
+        public bool verificaCPF() //string CPF - sem parâmetro
         {
             int soma, resto, cont = 0;
             soma = 0;
 
             CPF = CPF.Trim();
-            CPF = CPF.Replace(".", "");
+            CPF = CPF.Replace(",", "");
             CPF = CPF.Replace("-", "");
 
             for (int i = 0; i < CPF.Length; i++)
@@ -410,6 +410,6 @@ namespace Estudio
             if (resto != int.Parse(CPF.Substring(10, 1))) return false;
 
             return true;
-        } */
+        } 
     }
 }

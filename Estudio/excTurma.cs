@@ -36,10 +36,17 @@ namespace Estudio
             if (turma2.excluirTurma())
             {
                 MessageBox.Show("Turma Excluída!");
+                cbHora.Items.Clear();
+                cbDia.Items.Clear();
+                cbModalidade.Text = "";
+
             }
             else
             {
                 MessageBox.Show("Deu erro ruim!");
+                cbHora.Items.Clear();
+                cbDia.Items.Clear();
+                cbModalidade.Text = "";
             }
         }
 
