@@ -34,7 +34,7 @@ namespace Estudio
         {
             Turma turma = new Turma();
             int modalidade = turma.consultarID(txtModalidade.Text);
-            if (modalidade == 0)
+            if (modalidade == 1)
             {
                 MessageBox.Show("Selecione uma modalidade ativa.");
                 txtModalidade.Clear();
@@ -49,18 +49,34 @@ namespace Estudio
                 Turma turma3 = new Turma();
                 modalidade = turma3.consultarID(txtModalidade.Text);
                 Turma turma2 = new Turma(txtProfessor.Text, txtDia.Text, maskHora.Text, modalidade, qtde_alunos);
-                if (turma2.cadastrarTurma())
+                if (turma2.consultaExistente(txtProfessor.Text, txtDia.Text, maskHora.Text, modalidade) == false)
                 {
-                    MessageBox.Show("Cadastro realizado com sucesso!");
-                    txtDia.Text = "";
-                    txtProfessor.Text = "";
-                    txtQtdeAlunos.Text = "";
-                    maskHora.Text = "";
-                    txtModalidade.Text = "";
+                    DAO_Conexao.con.Close(); 
+                    if (turma3.consultaProfessor(txtProfessor.Text, txtDia.Text, maskHora.Text) == false)
+                    {
+                        DAO_Conexao.con.Close();
+                        if (turma2.cadastrarTurma())
+                        {
+                            MessageBox.Show("Cadastro realizado com sucesso!");
+                            txtDia.Text = "";
+                            txtProfessor.Text = "";
+                            txtQtdeAlunos.Text = "";
+                            maskHora.Text = "";
+                            txtModalidade.Text = "";
+                        }
+
+                        else
+                            MessageBox.Show("Erro no cadastro!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Um professor não pode dar aula no mesmo horário e no mesmo dia.");
+                    }
                 }
-                   
                 else
-                    MessageBox.Show("Erro no cadastro!");
+                {
+                    MessageBox.Show("Turma existente!");
+                }
             }
         }
     }

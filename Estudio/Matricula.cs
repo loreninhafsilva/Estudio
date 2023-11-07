@@ -242,5 +242,25 @@ namespace Estudio
             return resultado;
         }
 
+        public bool consultarTurmaExistente()
+        {
+            bool existe = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Matricula WHERE idTurma= '" + idTurma + "'", DAO_Conexao.con);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                {
+                    existe = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return existe;
+        }
+
     }
 }

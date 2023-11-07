@@ -410,5 +410,44 @@ namespace Estudio
             }
             return result;
         }
+
+        public bool consultaProfessor(string professor, string dia, string hora)
+        {
+            bool existe = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma WHERE professorTurma= '" + professor + "' and diasemanaTurma = '" + dia + "' and horaTurma = '" + hora + "'", DAO_Conexao.con);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                {
+                    existe = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return existe;
+        }
+        public bool consultaExistente(string professor, string dia, string hora, int modalidade)
+        {
+            bool existe = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma WHERE professorTurma= '" + professor + "' and diasemanaTurma = '" + dia + "' and horaTurma = '" + hora + "' and idModalidade= " + modalidade + "", DAO_Conexao.con);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                {
+                    existe = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return existe;
+        }
     }
 }
