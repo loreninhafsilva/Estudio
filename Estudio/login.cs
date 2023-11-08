@@ -66,18 +66,14 @@ namespace Estudio
                 menuStrip1.Enabled = true;
                 groupBox1.Visible = false;
                 cadastrarLoginToolStripMenuItem.Enabled = false;
-                cadastrarAlunoToolStripMenuItem.Enabled = false;
                 cadastrarModalidadeToolStripMenuItem.Enabled = false;
                 cadastrarTurmaToolStripMenuItem.Enabled = false;
-                excluirAlunoToolStripMenuItem.Enabled = false;
+                realizarMatrículaToolStripMenuItem.Enabled = false;
                 excluirModalidadeToolStripMenuItem.Enabled = false;
                 excluirTurmaToolStripMenuItem.Enabled = false;
-                atualizarAlunoToolStripMenuItem.Enabled = false;
+                excluirMatrículaToolStripMenuItem.Enabled = false;
                 atualizarModalidadeToolStripMenuItem.Enabled = false;
                 atualizarTurmaToolStripMenuItem.Enabled = false;
-                consultarMatrículasToolStripMenuItem.Enabled = false;
-                consultarModalidadeToolStripMenuItem.Enabled = false;
-
             }
         }
 

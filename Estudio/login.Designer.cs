@@ -48,7 +48,6 @@
             this.consultarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atualizarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alunoEmTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matrículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.realizarMatrículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirMatrículaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +74,6 @@
             this.alunoToolStripMenuItem,
             this.modalidadeToolStripMenuItem,
             this.turmaToolStripMenuItem,
-            this.alunoEmTurmaToolStripMenuItem,
             this.matrículaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -95,53 +93,53 @@
             this.sairToolStripMenuItem1});
             this.alunoToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
-            this.alunoToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.alunoToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.alunoToolStripMenuItem.Text = "Aluno";
             // 
             // cadastrarLoginToolStripMenuItem
             // 
             this.cadastrarLoginToolStripMenuItem.Name = "cadastrarLoginToolStripMenuItem";
-            this.cadastrarLoginToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.cadastrarLoginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastrarLoginToolStripMenuItem.Text = "Cadastrar Login";
             this.cadastrarLoginToolStripMenuItem.Click += new System.EventHandler(this.cadastrarLoginToolStripMenuItem_Click);
             // 
             // cadastrarAlunoToolStripMenuItem
             // 
             this.cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
-            this.cadastrarAlunoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.cadastrarAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastrarAlunoToolStripMenuItem.Text = "Cadastrar Aluno";
             this.cadastrarAlunoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarAlunoToolStripMenuItem_Click_1);
             // 
             // atualizarAlunoToolStripMenuItem
             // 
             this.atualizarAlunoToolStripMenuItem.Name = "atualizarAlunoToolStripMenuItem";
-            this.atualizarAlunoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.atualizarAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.atualizarAlunoToolStripMenuItem.Text = "Atualizar Aluno";
             this.atualizarAlunoToolStripMenuItem.Click += new System.EventHandler(this.atualizarAlunoToolStripMenuItem_Click_1);
             // 
             // excluirAlunoToolStripMenuItem
             // 
             this.excluirAlunoToolStripMenuItem.Name = "excluirAlunoToolStripMenuItem";
-            this.excluirAlunoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.excluirAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.excluirAlunoToolStripMenuItem.Text = "Excluir Aluno";
             this.excluirAlunoToolStripMenuItem.Click += new System.EventHandler(this.excluirAlunoToolStripMenuItem_Click);
             // 
             // consultarAlunoToolStripMenuItem
             // 
             this.consultarAlunoToolStripMenuItem.Name = "consultarAlunoToolStripMenuItem";
-            this.consultarAlunoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.consultarAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarAlunoToolStripMenuItem.Text = "Consultar Aluno";
             this.consultarAlunoToolStripMenuItem.Click += new System.EventHandler(this.consultarAlunoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(165, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // sairToolStripMenuItem1
             // 
             this.sairToolStripMenuItem1.Name = "sairToolStripMenuItem1";
-            this.sairToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.sairToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.sairToolStripMenuItem1.Text = "Sair";
             this.sairToolStripMenuItem1.Click += new System.EventHandler(this.sairToolStripMenuItem1_Click);
             // 
@@ -224,11 +222,6 @@
             this.excluirTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.excluirTurmaToolStripMenuItem.Text = "Excluir Turma";
             this.excluirTurmaToolStripMenuItem.Click += new System.EventHandler(this.excluirTurmaToolStripMenuItem_Click_1);
-            // 
-            // alunoEmTurmaToolStripMenuItem
-            // 
-            this.alunoEmTurmaToolStripMenuItem.Name = "alunoEmTurmaToolStripMenuItem";
-            this.alunoEmTurmaToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
             // 
             // matrículaToolStripMenuItem
             // 
@@ -426,7 +419,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ToolStripMenuItem alunoEmTurmaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fazerMatrículaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excluirMatrículaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarMatrículasToolStripMenuItem;
