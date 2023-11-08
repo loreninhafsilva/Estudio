@@ -75,6 +75,9 @@ namespace Estudio
                 atualizarAlunoToolStripMenuItem.Enabled = false;
                 atualizarModalidadeToolStripMenuItem.Enabled = false;
                 atualizarTurmaToolStripMenuItem.Enabled = false;
+                consultarMatrículasToolStripMenuItem.Enabled = false;
+                consultarModalidadeToolStripMenuItem.Enabled = false;
+
             }
         }
 

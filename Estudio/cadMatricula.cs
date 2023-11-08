@@ -16,6 +16,7 @@ namespace Estudio
         public cadMatricula()
         {
             InitializeComponent();
+            DAO_Conexao.con.Close();
             Modalidade cad = new Modalidade();
             MySqlDataReader a = cad.consultarTodasModalidade();
             while (a.Read())

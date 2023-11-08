@@ -134,16 +134,15 @@ namespace Estudio
         public int somarMatricula(int alunos)
         {
             MySqlDataReader resultado = null;
-            int s = 0;
             int c = alunos;
-            s = c++;
+            c ++;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("update Estudio_Turma set nalunoscadastradosTurma = " + s + " where idEstudio_Turma  = " + idTurma + "", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("update Estudio_Turma set nalunoscadastradosTurma = " + c + " where idEstudio_Turma  = " + idTurma + "", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
-                Console.WriteLine("nalunoscadastradosTurma" + s);
-                Console.WriteLine("update Estudio_Turma set nalunoscadastradosTurma = " + s + " where = " + idTurma + "");
+                Console.WriteLine("nalunoscadastradosTurma" + c);
+                Console.WriteLine("update Estudio_Turma set nalunoscadastradosTurma = " + c + " where = " + idTurma + "");
             }
             catch (Exception ex)
             {
@@ -153,7 +152,7 @@ namespace Estudio
             {
                 DAO_Conexao.con.Close();
             }
-            return s;
+            return c;
 
         }
 
