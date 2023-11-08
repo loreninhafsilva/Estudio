@@ -25,6 +25,7 @@ namespace Estudio
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             Turma turma = new Turma();
             int m = turma.consultarID(cbModalidade.Text);
 
@@ -39,15 +40,46 @@ namespace Estudio
             }
             else
             {
-                if (matricula.cadastrarMatricula())
+                Matricula matricula2 = new Matricula();
+                if(matricula2.consultarAlunoExistente(maskCPF.Text, c) == false)
                 {
-                    matricula.somarMatricula(alunos);
-                    MessageBox.Show("Matricula realizada com sucesso!");
+                    DAO_Conexao.con.Close();
+                    if (matricula.cadastrarMatricula())
+                        {
+                            matricula.somarMatricula(alunos);
+                            MessageBox.Show("Matricula realizada com sucesso!");
+                            cbModalidade.Text = "";
+                            cbHora.Text = "";
+                            cbHora.Items.Clear();
+                            cbDia.Text = "";
+                            cbDia.Items.Clear();
+                            txtNome.Text = "";
+                            maskCPF.Text = "";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao matricular!");
+                        cbModalidade.Text = "";
+                        cbHora.Text = "";
+                        cbHora.Items.Clear();
+                        cbDia.Text = "";
+                        cbDia.Items.Clear();
+                        txtNome.Text = "";
+                        maskCPF.Text = "";
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao matricular!");
+                    MessageBox.Show("Aluno já existente na turma");
+                    cbModalidade.Text = "";
+                    cbHora.Text = "";
+                    cbHora.Items.Clear();
+                    cbDia.Text = "";
+                    cbDia.Items.Clear();
+                    txtNome.Text = "";
+                    maskCPF.Text = "";
                 }
+
             }
         }
 
@@ -64,16 +96,16 @@ namespace Estudio
                 cbDia.Items.Add(b["diasemanaTurma"].ToString());
             DAO_Conexao.con.Close();
 
-            if (cbDia.Items.Count == 0)
+            if (cbDia.Items.Count != 0)
+            {
+                cbDia.Enabled = true;
+                cbHora.Enabled = true;
+            }
+            else
             {
                 cbDia.Enabled = false;
                 cbHora.Enabled = false;
                 MessageBox.Show("Turma inexistente. Selecione uma modalidade com turma.");
-            }
-            else
-            {
-                cbDia.Enabled = true;
-                cbHora.Enabled = true;
             }
         }
 

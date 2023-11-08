@@ -67,20 +67,24 @@ namespace Estudio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
             Turma turma = new Turma();
             int m = turma.consultarID(cbModalidade.Text);
 
             int c = turma.consultarIDTurma02(m, cbHora.Text, cbDia.Text);
 
             Matricula con_mod = new Matricula();
-            if(con_mod.consultarTurmaExistente() == true)
+            if(con_mod.consultarTurmaExistente() == false)
             {
                 DAO_Conexao.con.Close();
                 MySqlDataReader r = con_mod.consultarAlunos(c);
                 while (r.Read())
                     dataGridView1.Rows.Add(r["CPFAluno"].ToString(), r["nomeAluno"].ToString());
                 DAO_Conexao.con.Close();
+                cbHora.Items.Clear();
+                cbDia.Items.Clear();
+                cbDia.Text = "";
+                cbHora.Text = "";
+                cbModalidade.Text = "";
             }
             else
             {

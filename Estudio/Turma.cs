@@ -98,7 +98,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT idEstudio_Modalidade FROM Estudio_Turma where ativa = 0 ", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT idModalidade FROM Estudio_Turma where ativa = 0 ", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
 
             }
@@ -115,7 +115,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma where idModalidade ='" + modalidade + "' and ativa = 0", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma where idModalidade =" + modalidade + " and ativa = 0", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
 
             }

@@ -39,6 +39,8 @@ namespace Estudio
                 cbHora.Items.Clear();
                 cbDia.Items.Clear();
                 cbModalidade.Text = "";
+                cbDia.Text = "";
+                cbHora.Text = "";
 
             }
             else
@@ -47,6 +49,8 @@ namespace Estudio
                 cbHora.Items.Clear();
                 cbDia.Items.Clear();
                 cbModalidade.Text = "";
+                cbDia.Text = "";
+                cbHora.Text = "";
             }
         }
 

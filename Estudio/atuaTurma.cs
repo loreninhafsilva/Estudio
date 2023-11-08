@@ -120,9 +120,16 @@ namespace Estudio
             int alunos = int.Parse(txtQtdeAlunos.Text);
             int m = turma.consultarIDTurma02(c, cbHora.Text, cbDia.Text);
             if (turma.atualizarTurma(m, alunos, txtProfessor.Text, cbHora.Text, cbDia.Text))
-                {
-                    MessageBox.Show("Dados atualizados com Sucesso");
-                }
+            {
+                MessageBox.Show("Dados atualizados com Sucesso");
+                txtProfessor.Text = "";
+                txtQtdeAlunos.Text = "";
+                cbDia.Text = "";
+                cbHora.Text = "";
+                cbModalidade.Text = "";
+                cbDia.Items.Clear();
+                cbHora.Items.Clear();
+            }
                 else
                 {
                     MessageBox.Show("Erro ao atualizar");
